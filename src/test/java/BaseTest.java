@@ -17,7 +17,7 @@ public class BaseTest {
         options.addArguments("start-maximized");
         options.addArguments("--guest");
         driver = new ChromeDriver(options);
-        //driver.manage().timeouts().implicitlyWait(Duration.of(5, TimeUnit.SECONDS.toChronoUnit()));
+        driver.manage().timeouts().implicitlyWait(Duration.of(5, TimeUnit.SECONDS.toChronoUnit()));
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
     }
