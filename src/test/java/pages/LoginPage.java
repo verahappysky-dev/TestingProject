@@ -1,7 +1,10 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import user.User;
+import utils.PropertyReader;
 
 public class LoginPage {
     WebDriver driver;
@@ -15,28 +18,34 @@ public class LoginPage {
         this.driver = driver;
     }
 
+    @Step("Открытие основной страницы")
     public void open() {
-        driver.get("https://www.saucedemo.com/");
+        driver.get(PropertyReader.getProperty("saucedemo.url"));
     }
 
-    public void login(String login, String password) {
-        fillInLoginField(login);
-        fillInPasswordField(password);
+    @Step("Авторизация пользователя")
+    public void login(User user) {
+        fillInLoginField(user.email());
+        fillInPasswordField(user.password());
         driver.findElement(loginBtn).click();
     }
 
+    @Step("Отображение сообщения об ошибке")
     public boolean isErrorMsgAppear() {
         return driver.findElement(error).isDisplayed();
     }
 
+    @Step("Получение сообщения о ошибке")
     public String errorMessageText() {
         return driver.findElement(error).getText();
     }
 
+    @Step("Заполнение поля логина")
     public void fillInLoginField(String login) {
         driver.findElement(loginField).sendKeys(login);
     }
 
+    @Step("Заполение поля пароля")
     public void fillInPasswordField(String password) {
         driver.findElement(passwordField).sendKeys(password);
     }
