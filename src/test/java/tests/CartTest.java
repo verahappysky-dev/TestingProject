@@ -13,7 +13,6 @@ import static user.UserFactory.withAdminPermission;
 
 public class CartTest extends BaseTest {
 
-
     @TmsLink("TestingProject")
     @Severity(SeverityLevel.NORMAL)
     @Test(description = "Проверка добавления товаров в корзину")
@@ -32,6 +31,4 @@ public class CartTest extends BaseTest {
         assertFalse(cartPage.getProductsNames().isEmpty());
         assertTrue(cartPage.getProductsNames().contains("Sauce Labs Bolt T-Shirt"));
     }
-
-
 }

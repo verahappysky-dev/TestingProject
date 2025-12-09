@@ -23,7 +23,6 @@ public class LoginTest extends BaseTest {
         };
     }
 
-
     @TmsLink("TestingProject")
     @Severity(SeverityLevel.BLOCKER)
     @Test(description = "Проверка корректного логина", priority = 2)

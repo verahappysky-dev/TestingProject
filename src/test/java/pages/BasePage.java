@@ -10,8 +10,6 @@ import java.time.Duration;
 public class BasePage {
 
     public final static String TEXT_LOCATOR_PATTERN = "//*[text()='%s']";
-
-
     public WebDriver driver;
     public WebDriverWait wait;
 
@@ -25,5 +23,4 @@ public class BasePage {
         // wait.until(ExpectedConditions.visibilityOfElementLocated(pageTitle));
         return driver.findElement(By.xpath(TEXT_LOCATOR_PATTERN.formatted(pageTitle))).isDisplayed();
     }
-
 }

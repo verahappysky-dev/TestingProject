@@ -58,4 +58,3 @@ public class ProductsPage extends BasePage {
         driver.findElement(shoppingCartBadge).click();
     }
 }
-

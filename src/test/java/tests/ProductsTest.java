@@ -33,5 +33,4 @@ public class ProductsTest extends BaseTest {
         productsPage.isPageLoaded(PRODUCTS.getDisplatName());
         assertTrue(productsPage.addAllGoodsToCart());
     }
-
 }
